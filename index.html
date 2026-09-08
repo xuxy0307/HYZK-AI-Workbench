@@ -1641,7 +1641,7 @@
                 </div>
                 <div class="nav-item" onclick="switchTab('share', this)">
                     <span class="nav-icon">🌟</span>
-                    <span>创意工具箱</span>
+                    <span>创意分享</span>
                     <span class="nav-badge">NEW</span>
                 </div>
             </div>
@@ -1709,9 +1709,9 @@
                             <label>选择渠道</label>
                             <div class="custom-select">
                                 <select id="channelSelect" onchange="updateChannelAndPrice()">
-                                    <option value="channel3" selected>渠道3 - 经济版</option>
                                     <option value="channel1">渠道1 - 标准版</option>
                                     <option value="channel2">渠道2 - 专业版</option>
+                                    <option value="channel3">渠道3 - 经济版</option>
                                 </select>
                                 <span class="select-arrow">▼</span>
                             </div>
@@ -2031,66 +2031,97 @@
                         </div>
                     </div>
                     <div class="ecommerce-submenu">
-                        <div class="ecommerce-item" onclick="openEcommerceTool('ecommerce-main-image.html')">
+                        <div class="ecommerce-item" onclick="processEcommerce('main-image')">
                             <div class="ecommerce-item-icon">🖼️</div>
                             <h4>爆款主图</h4>
                             <p>一键生成高点击率商品主图</p>
                         </div>
-                        <div class="ecommerce-item" onclick="openEcommerceTool('ecommerce-detail-page.html')">
+                        <div class="ecommerce-item" onclick="processEcommerce('detail-page')">
                             <div class="ecommerce-item-icon">📄</div>
                             <h4>详情页图片</h4>
                             <p>智能生成商品详情页全套素材</p>
                         </div>
-                        <div class="ecommerce-item" onclick="openEcommerceTool('ecommerce-brand-video.html')">
+                        <div class="ecommerce-item" onclick="processEcommerce('brand-video')">
                             <div class="ecommerce-item-icon">🎥</div>
                             <h4>品宣视频</h4>
                             <p>自动生成品牌宣传短视频</p>
                         </div>
-                        <div class="ecommerce-item" onclick="openEcommerceTool('ecommerce-model-video.html')">
+                        <div class="ecommerce-item" onclick="processEcommerce('model-video')">
                             <div class="ecommerce-item-icon">👗</div>
                             <h4>模特展示视频</h4>
                             <p>AI模特试穿展示视频生成</p>
                         </div>
-                        <div class="ecommerce-item" onclick="openEcommerceTool('xiaohongshu-4img1text.html')">
-                            <div class="ecommerce-item-icon">📕</div>
-                            <h4>小红书四图一文</h4>
-                            <p>一键生成小红书爆款图文内容</p>
-                        </div>
                     </div>
                 </div>
 
-                <!-- 创意工具 -->
+                <!-- 创意分享 -->
                 <div class="feature-card hidden" id="shareCard">
                     <div class="feature-header">
                         <div class="feature-icon-wrap icon-share">🌟</div>
                         <div class="feature-title-group">
                             <h3>
-                                创意工具箱
-                                <span class="cost-badge">⚡ 一键生成</span>
+                                创意分享广场
+                                <span class="cost-badge">🆓 免费浏览</span>
                             </h3>
-                            <p class="feature-desc">爆款视频复刻、情感视频生产、去水印、漫剧生成，全套创意工具一站式使用</p>
+                            <p class="feature-desc">探索社区精选创意作品，获取灵感，分享你的AI创作成果</p>
                         </div>
                     </div>
-                    <div class="ecommerce-submenu">
-                        <div class="ecommerce-item" onclick="openEcommerceTool('video-replica.html')">
-                            <div class="ecommerce-item-icon">🔥</div>
-                            <h4>爆款视频复刻</h4>
-                            <p>分析爆款视频，一键复刻同款内容</p>
+                    <div class="share-grid">
+                        <div class="share-card" onclick="showToast('🎨 查看作品详情', 'success')">
+                            <div class="share-preview">🎨</div>
+                            <div class="share-info">
+                                <h4>赛博朋克城市夜景</h4>
+                                <p>使用Midjourney V6创作的科幻风格城市景观...</p>
+                                <div class="share-meta">
+                                    <div class="share-author">
+                                        <div class="share-avatar">A</div>
+                                        <span>ArtMaster</span>
+                                    </div>
+                                    <span>👍 2.3k</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="ecommerce-item" onclick="openEcommerceTool('emotional-video.html')">
-                            <div class="ecommerce-item-icon">💕</div>
-                            <h4>情感类视频生产</h4>
-                            <p>一键生成感人情感类短视频</p>
+                        <div class="share-card" onclick="showToast('🎬 查看作品详情', 'success')">
+                            <div class="share-preview">🎬</div>
+                            <div class="share-info">
+                                <h4>古风舞蹈短视频</h4>
+                                <p>AI生成的汉服舞蹈视频，动作流畅自然...</p>
+                                <div class="share-meta">
+                                    <div class="share-author">
+                                        <div class="share-avatar">D</div>
+                                        <span>DanceAI</span>
+                                    </div>
+                                    <span>👍 1.8k</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="ecommerce-item" onclick="openEcommerceTool('watermark-remover.html')">
-                            <div class="ecommerce-item-icon">💧</div>
-                            <h4>一键去水印</h4>
-                            <p>支持抖音/快手/小红书等平台去水印</p>
+                        <div class="share-card" onclick="showToast('📝 查看作品详情', 'success')">
+                            <div class="share-preview">📝</div>
+                            <div class="share-info">
+                                <h4>产品营销文案集</h4>
+                                <p>精选高转化率电商文案模板，适用于各类目...</p>
+                                <div class="share-meta">
+                                    <div class="share-author">
+                                        <div class="share-avatar">C</div>
+                                        <span>CopyPro</span>
+                                    </div>
+                                    <span>👍 3.1k</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="ecommerce-item" onclick="openEcommerceTool('comic-drama.html')">
-                            <div class="ecommerce-item-icon">🎭</div>
-                            <h4>漫剧一键生产</h4>
-                            <p>文本转漫画风格短剧视频</p>
+                        <div class="share-card" onclick="showToast('🖼️ 查看作品详情', 'success')">
+                            <div class="share-preview">🖼️</div>
+                            <div class="share-info">
+                                <h4>极简主义Logo设计</h4>
+                                <p>品牌标识设计作品集，涵盖科技、时尚、餐饮...</p>
+                                <div class="share-meta">
+                                    <div class="share-author">
+                                        <div class="share-avatar">L</div>
+                                        <span>LogoLab</span>
+                                    </div>
+                                    <span>👍 956</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2105,8 +2136,8 @@
         // 用户数据
         let userData = {
             credits: 2580,
-            currentChannel: 'channel3',
-            currentModel: 'gpt-5.4',
+            currentChannel: 'channel1',
+            currentModel: 'gpt-4',
             isProcessing: false,
             uploadedFiles: [],
             // 历史任务日志
@@ -2254,9 +2285,6 @@
                 baseUrl: 'https://api.wenle.ai/v1',
                 models: {
                     text: [
-                        // GPT-5.4系列 - 默认模型，支持多模态
-                        { name: 'GPT-5.4', value: 'gpt-5.4', multimodal: true },
-                        { name: 'GPT-5.4 Mini', value: 'gpt-5.4-mini', multimodal: true },
                         // GPT系列 - 支持多模态
                         { name: 'GPT-4o', value: 'gpt-4o', multimodal: true },
                         { name: 'GPT-4o-mini', value: 'gpt-4o-mini', multimodal: true },
@@ -2264,6 +2292,8 @@
                         { name: 'GPT-5', value: 'gpt-5', multimodal: true },
                         { name: 'GPT-5 Mini', value: 'gpt-5-mini', multimodal: true },
                         { name: 'GPT-5 Nano', value: 'gpt-5-nano', multimodal: true },
+                        { name: 'GPT-5.4', value: 'gpt-5.4', multimodal: true },
+                        { name: 'GPT-5.4 Mini', value: 'gpt-5.4-mini', multimodal: true },
                         { name: 'GPT-5.1', value: 'gpt-5.1' },
                         { name: 'GPT-5.1 Chat Latest', value: 'gpt-5.1-chat-latest' },
                         { name: 'GPT-5 Chat Latest', value: 'gpt-5-chat-latest' },
@@ -2309,14 +2339,12 @@
                         { name: 'Kimi K2 正式版', value: 'kimi-k2-250711' }
                     ],
                     image: [
-                        // 图片生成模型 - banana2为默认
-                        { name: 'Banana 2', value: 'banana2' },
+                        // 图片生成模型
                         { name: 'GPT-Image-1', value: 'gpt-image-1' },
                         { name: 'Seedream 4.0', value: 'seedream-4-0-250828' }
                     ],
                     video: [
-                        // 视频生成模型 - grok-imagine-1.0为默认
-                        { name: 'Grok Imagine 1.0', value: 'grok-imagine-1.0' },
+                        // 视频生成模型
                         { name: 'Sora 2 竖屏', value: 'sora_video' },
                         { name: 'Sora 2 横屏', value: 'sora_video2-landscape' },
                         { name: 'Sora 2 Pro', value: 'sora-2-pro-all' }
@@ -2348,9 +2376,9 @@
                 desc: '专为电商卖家打造，快速生成爆款主图、详情页、品宣视频'
             },
             share: {
-                title: '创意工具箱',
-                badge: '一键生成',
-                desc: '爆款视频复刻、情感视频生产、一键去水印、漫剧一键生产，全套创意工具一站式使用'
+                title: '创意分享广场',
+                badge: '灵感社区',
+                desc: '探索社区精选创意作品，获取灵感，分享你的AI创作成果'
             },
             models: {
                 title: '模型广场',
@@ -3016,9 +3044,27 @@
             renderModelPlaza(channelNum);
         }
 
-        // 打开电商工具页面
-        function openEcommerceTool(pageUrl) {
-            window.open(pageUrl, '_blank');
+        // 电商功能处理
+        function processEcommerce(type) {
+            const costs = {
+                'main-image': 5,
+                'detail-page': 10,
+                'brand-video': 15,
+                'model-video': 20
+            };
+            const names = {
+                'main-image': '爆款主图',
+                'detail-page': '详情页图片',
+                'brand-video': '品宣视频',
+                'model-video': '模特展示视频'
+            };
+            
+            if (!deductCredits(costs[type])) return;
+            
+            showToast(`🛒 正在生成${names[type]}，请稍候...`, 'success');
+            setTimeout(() => {
+                showToast(`✅ ${names[type]}生成完成！`, 'success');
+            }, 2000);
         }
 
         // 扣除积分
